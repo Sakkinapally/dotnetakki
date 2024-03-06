@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: image123 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image123
+  template:
+    metadata:
+      labels:
+        app: image123 
+    spec:
+      containers:
+        - name: image123 
+          image: cluster6.azurecr.io/image123
+          ports:
+          - containerPort: 80
