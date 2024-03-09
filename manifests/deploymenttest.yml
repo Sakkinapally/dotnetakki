@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: image 
-          image: cluster6.azurecr.io/image123
+          image: lekhasri.azurecr.io/image123
           ports:
           - containerPort: 80
