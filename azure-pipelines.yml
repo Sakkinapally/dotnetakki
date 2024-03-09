@@ -12,7 +12,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '173f023f-0889-499a-b837-73cc48fdaef4'
   imageRepository: 'image123'
-  containerRegistry: 'cluster6.azurecr.io'
+  containerRegistry: 'lekhasri.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'cluster681499241-auth'
