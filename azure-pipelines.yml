@@ -1,0 +1,29 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+   buildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration)'
+
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration)'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(6)(5ffbb617-3305-44cf-b16b-85018f8e60f1)'
+    appType: 'webAppLinux'
+    appName: 'srilekha'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
